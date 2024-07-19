@@ -10,7 +10,16 @@
     <img src="CSS/240434905_529311021669873_7584667607096157176_n-removebg-preview.png" alt="" class="logo">
 
     <form onsubmit="return submitForm(event)">
-   
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="nome"><strong>Nome</strong></label>
+                <input type="text" name="nome" id="nome" required>
+                <label for="data"><strong>Data de Entrega</strong></label>
+                <input type="date" name="data" id="data" required>
+                <label for="numero"><strong>Número</strong></label>
+                <input type="tel" name="numero" id="numero" pattern="\d{2}-\d{9}" title="Ex: 11-123456789" required>
+            </div>
+        </fieldset>
         
         <fieldset class="sabores">
             <div class="sabor">
