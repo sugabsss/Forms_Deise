@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Encomenda de Bolos</title>
+    <link rel="stylesheet" href="CSS/estilo.css">
+</head>
+<body>
+    <img src="CSS/240434905_529311021669873_7584667607096157176_n-removebg-preview.png" alt="" class="logo">
+
+    <form onsubmit="return submitForm(event)">
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="nome"><strong>Nome</strong></label>
+                <input type="text" name="nome" id="nome" required>
+                <label for="data"><strong>Data de Entrega</strong></label>
+                <input type="date" name="data" id="data" required>
+                <label for="numero"><strong>Número</strong></label>
+                <input type="tel" name="numero" id="numero" pattern="\d{2}-\d{9}" title="Ex: 11-123456789" required>
+            </div>
+        </fieldset>
+        
+        <fieldset class="sabores">
+            <div class="sabor">
+                <label for="sabor"><strong>Sabores</strong></label><br>
+                <select id="sabor" name="sabor" required>
+                    <option selected disabled value="selecione">Selecione o Sabor</option>
+                    <option>Chocolate</option>  
+                    <option>Morango</option> 
+                    <option>Nozes</option> 
+                    <option>Limão</option> 
+                    <option>Prestígio</option>
+                    <option>Floresta Negra</option> 
+                    <option>Floresta Branca</option> 
+                    <option>Creme Belga com Abacaxi</option> 
+                    <option>Creme Belga com Pêssego</option> 
+                    <option>Creme Belga com Ameixa</option>
+                    <option>Doce de Leite com Coco</option>
+                    <option>Doce de Leite com Pêssego</option> 
+                    <option>Doce de Leite com Ameixa</option>
+                </select>
+            </div>
+
+            <div class="kilos">
+                <label for="quantidade"><strong>Quantos Quilos?</strong></label>
+                <select id="quantidades" name="kilo" required>
+                    <option selected disabled value="">Quilos/Preços</option>
+                </select>   
+            </div>
+
+            <div class="Formatos">
+                <strong>Formatos:</strong>
+                <div>
+                    <label for="Formato1">Quadrado:</label>
+                    <input type="checkbox" id="Formato1" name="Formato" value="Quadrado" onclick="validateFormat()">
+                </div>
+                <div>
+                    <label for="Formato2">Redondo:</label>
+                    <input type="checkbox" id="Formato2" name="Formato" value="Redondo" onclick="validateFormat()">
+                </div>
+            </div>
+
+            <div id="error-msg"></div>
+
+            <div class="observacoes">
+                <label for="observacoes"><strong>Observações/Estilo do bolo/links</strong></label>
+                <textarea rows="6" style="width: 26em;" id="observacoes" name="observacoes"></textarea>
+            </div>
+        </fieldset>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('data').setAttribute('min', today);
+            
+            const kiloSelect = document.getElementById('quantidades');
+            for (let i = 1; i <= 10; i++) {
+                const option = document.createElement('option');
+                option.value = `${i}kg - R$${i * 65},00`;
+                option.textContent = `${i}kg - R$${i * 65},00`;
+                kiloSelect.appendChild(option);
+            }
+            const moreOption = document.createElement('option');
+            moreOption.value = "10kg+";
+            moreOption.textContent = "10kg+ (Preço sob consulta)";
+            kiloSelect.appendChild(moreOption);
+        });
+
+        function validateFormat() {
+            var checkboxes = document.querySelectorAll('input[name="Formato"]');
+            var errorMsg = document.getElementById('error-msg');
+            var checked = Array.prototype.slice.call(checkboxes).filter(function (checkbox) {
+                return checkbox.checked;
+            });
+
+            if (checked.length !== 1) {
+                errorMsg.textContent = 'Selecione apenas um formato.';
+                return false;
+            } else {
+                errorMsg.textContent = '';
+                return true;
+            }
+        }
+
+        function submitForm(event) {
+            if (!validateFormat()) {
+                event.preventDefault(); // Impede o envio do formulário se não estiver validado
+            }
+            // Aqui você pode adicionar o código para enviar o formulário
+        }
+    </script>
+</body>
+</html>
