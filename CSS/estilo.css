@@ -1,1 +1,103 @@
-*{margin:0;padding:0;box-sizing:border-box}body{background-color:#f5f5f5;font-family:'Roboto',sans-serif;color:#333;display:flex;justify-content:center;align-items:center;min-height:100vh}form{width:70%;max-width:600px;padding:20px;background-color:#fff;border-radius:20px;box-shadow:0 0 10px rgba(0,0,0,0.1);margin-left:10%}.campo{font-family:'Roboto',sans-serif;font-size:1.1em;color:#630;margin-top:10px}.sabor{font-family:'Roboto',sans-serif;font-size:1.1em;color:#630;margin-top:10px}.kilos{font-family:'Roboto',sans-serif;font-size:1.1em;color:#630;margin-top:10px}.Formatos{margin-bottom:20px;font-family:'Roboto',sans-serif;font-size:1.1em;color:#630;margin-top:10px}.Formatos div{display:flex;align-items:center;margin-bottom:10px;font-family:'Roboto',sans-serif;font-size:1.1em;color:#630;margin-top:10px}.Formatos input[type="checkbox"]{margin-right:100px}.observacoes{font-family:'Roboto',sans-serif;font-size:1.1em;color:#630;margin-top:10px}fieldset{border:0}input,select,textarea{width:100%;border-radius:10px;padding:.5em;margin:.5em 0;border:1px solid #ccc;box-sizing:border-box;font-size:1em}input:focus,select:focus,textarea:focus{outline:none;border-color:#ffb6c1;box-shadow:0 0 5px #ffb6c1}button{font-family:'Montserrat',sans-serif;font-size:1em;background-color:#630;color:#fff;padding:.5em 1em;border:none;border-radius:5px;cursor:pointer;transition:background-color .3s ease}button:hover{background-color:#ffb6c1}.check{display:flex}.logo{position:absolute;top:10px;left:10px;width:200px;height:auto}@media screen and (max-width: 768px){#titulo{margin-left:10%}#subtitulo{margin-left:15%}}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    width: 70%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10%;
+}
+
+.campo, .sabor, .kilos, .Formatos, .observacoes {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    color: #630;
+    margin-top: 10px;
+}
+
+.Formatos {
+    margin-bottom: 20px;
+}
+
+.Formatos div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.Formatos input[type="checkbox"] {
+    margin-right: 100px;
+}
+
+fieldset {
+    border: 0;
+}
+
+input, select, textarea {
+    width: 100%;
+    border-radius: 10px;
+    padding: .5em;
+    margin: .5em 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #ffb6c1;
+    box-shadow: 0 0 5px #ffb6c1;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    background-color: #630;
+    color: #fff;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+button:hover {
+    background-color: #ffb6c1;
+}
+
+.check {
+    display: flex;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #titulo {
+        margin-left: 10%;
+    }
+    #subtitulo {
+        margin-left: 15%;
+    }
+}
